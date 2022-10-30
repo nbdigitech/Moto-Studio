@@ -12,7 +12,7 @@ import { AiOutlineClose, AiOutlineMenuFold } from "react-icons/ai";
 import { CardContext } from "../components/Layout";
 import { apipath } from "../pages/api/apiPath";
 
-function Header() {
+function Header({ customData }) {
   const { totalItem, userLogout } = useContext(CardContext);
   const { data: session } = useSession();
   const [activeIcon, setActiveIcon] = useState(false);
@@ -23,6 +23,7 @@ function Header() {
   const [searchText, setSearchText] = useState("");
   const [searchData, setSearchData] = useState([]);
   const [isShrunk, setShrunk] = useState(false);
+  const [websitename, setWebName] = useState(null);
   const usermenuRef = useRef();
   const connectmenuRef = useRef();
 
@@ -104,7 +105,11 @@ function Header() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  // console.log(isShrunk);
+  useEffect(() => {
+    const name = localStorage.getItem("websitename");
+    setWebName(name);
+  });
+  const { id } = router.query;
 
   return (
     <>
@@ -125,15 +130,27 @@ function Header() {
           >
             <Navbar.Brand href="/">
               <div>
-                <Image
-                  src={logo}
-                  width={isShrunk ? 100 : 160}
-                  height={isShrunk ? 46 : 80}
-                  alt="logo"
-                  unoptimized={true}
-                  loading="eager"
-                  layout="fixed"
-                />
+                {websitename !== null && id ? (
+                  <h1
+                    style={{
+                      fontSize: 25,
+                      fontWeight: 700,
+                      color: "#000",
+                    }}
+                  >
+                    {websitename}
+                  </h1>
+                ) : (
+                  <Image
+                    src={logo}
+                    width={isShrunk ? 100 : 160}
+                    height={isShrunk ? 46 : 80}
+                    alt="logo"
+                    unoptimized={true}
+                    loading="eager"
+                    layout="fixed"
+                  />
+                )}
               </div>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -277,16 +294,28 @@ function Header() {
           {/* <button onClick={()=>handleShow()}>show</button> */}
           <Navbar bg="light" expanded={expand}>
             <Navbar.Brand href="/" className="Logo_brand">
-              <Image
-                className="Logo_icon"
-                width={70}
-                height={40}
-                src={logo}
-                alt="logo"
-                unoptimized={true}
-                loading="eager"
-                layout="fixed"
-              />
+              {websitename !== null ? (
+                <h1
+                  style={{
+                    fontSize: 25,
+                    fontWeight: 700,
+                    color: "#000",
+                  }}
+                >
+                  {websitename}
+                </h1>
+              ) : (
+                <Image
+                  className="Logo_icon"
+                  width={70}
+                  height={40}
+                  src={logo}
+                  alt="logo"
+                  unoptimized={true}
+                  loading="eager"
+                  layout="fixed"
+                />
+              )}
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="offcanvasNavbar" />
             <Navbar.Offcanvas

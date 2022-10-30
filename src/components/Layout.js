@@ -1,14 +1,14 @@
-import React, { createContext, useReducer, useEffect, useState } from "react";
-import Toast from "react-bootstrap/Toast";
-import ToastContainer from "react-bootstrap/ToastContainer";
-import Footer from "./Footer";
-import Header from "./Header";
-import SubHeader from "./SubHeader";
-import { reducer } from "./Reducer";
-import { apipath } from "../pages/api/apiPath";
-import Router from "next/router";
 import { useSession } from "next-auth/react";
 import Head from "next/head";
+import Router, { useRouter } from "next/router";
+import React, { createContext, useEffect, useReducer, useState } from "react";
+import Toast from "react-bootstrap/Toast";
+import ToastContainer from "react-bootstrap/ToastContainer";
+import { apipath } from "../pages/api/apiPath";
+import Footer from "./Footer";
+import Header from "./Header";
+import { reducer } from "./Reducer";
+import SubHeader from "./SubHeader";
 
 export const CardContext = createContext();
 const initialState = {
@@ -25,6 +25,7 @@ const initialState = {
 function Layout({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [show, setShow] = useState(false);
+  const [customData, setCustomData] = useState(null);
 
   const { data: session } = useSession();
 
@@ -113,7 +114,7 @@ function Layout({ children }) {
               discount: selectedWeight.discount,
               discount_value: selectedWeight.discount_value,
               gst_amount: selectedWeight.gst_amount,
-              taxable_amount: selectedWeight.taxable_amount
+              taxable_amount: selectedWeight.taxable_amount,
             },
           ],
         },
@@ -314,28 +315,37 @@ function Layout({ children }) {
   useEffect(() => {
     if (!state.isLogin && session) {
       localStorage.setItem("cg-herbal-userData", JSON.stringify(session));
-
-      // fetch(`${apipath}/api/v1/users/social`, {
-      //   method:"POST",
-      //   headers: {
-      //     'Content-Type':'application/json'
-      //   },
-      //   body:JSON.stringify({email:session?.user?.email})
-      // })
-      // .then(res => res.json())
-      // .then((result) => {
-      //   if (result.user && result.token) {
-      //     localStorage.setItem("cg-herbal-userData", JSON.stringify(result));
-      //     // router.push("/auth/UserProfile");
-      //   }
-      // }).catch((err) => {
-      //   console.log('err :>> ', err);
-      // });
     }
-     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.isLogin, session]);
 
-  // console.log('state.item :>> ', state);
+  const router = useRouter();
+
+  const { id } = router.query;
+  useEffect(() => {
+    const websitename = localStorage.getItem("websitename");
+    if (!websitename) {
+      const getCustomdata = async () => {
+        const customdata = await fetch("/api/customweb", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            id: id,
+          }),
+        });
+        const data = await customdata.json();
+        setCustomData(data);
+        {
+          data?.user?.websitename !== undefined
+            ? localStorage.setItem("websitename", data?.user?.websitename)
+            : null;
+        }
+        // console.log(data?.user?.websitename);
+      };
+      getCustomdata();
+    }
+  }, [id]);
   return (
     <CardContext.Provider
       value={{
@@ -364,7 +374,7 @@ function Layout({ children }) {
           </title>
         </Head>
 
-        <Header />
+        <Header customData={customData} />
         <SubHeader />
         <main>{children}</main>
         <Footer />
