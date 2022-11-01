@@ -63,7 +63,7 @@ function FeaturedProducts({ category }) {
                   >
                     <div className="rounded-circle zoom-in-img-wrapper">
                       <Image
-                        src={`/Picture/${index + 1}.jpeg`}
+                        src={`/Picture/${index + 1}.png`}
                         alt="GourmetFoods"
                         className={`rounded-circle hover1 ${
                           selectedCat === cat._id ? "active" : ""

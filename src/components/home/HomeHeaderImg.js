@@ -122,7 +122,7 @@ It's an Attitude!”
       <div
         className="home-head-img"
         style={{
-          backgroundImage: `url(/images/carbanner.jpg)`,
+          backgroundImage: `url(/images/mainbanner.png)`,
           backgroundSize: "cover",
           imageRendering: "-webkit-optimize-contrast",
           imageRendering: "crisp-edges",
@@ -165,7 +165,7 @@ It's an Attitude!”
                   <div>
                     <p className="home-header-head text-center mb-0 text-md-start">
                       Detailing is not a skill
-                      <br /> It's an Attitude!
+                      <br /> It is an Attitude!
                     </p>
                   </div>
                   <div className="">
@@ -192,7 +192,7 @@ It's an Attitude!”
                     </p>
                   </div>
 
-                  <div
+                  {/* <div
                     className="col-10 text-center text-md-start mx-auto ms-md-0 mb-0"
                     onClick={() => router.push("/product")}
                   >
@@ -200,7 +200,7 @@ It's an Attitude!”
                       className="home-header-button"
                       text="JOIN THE ECO-REVOLUTION     &nbsp; &nbsp; &gt;"
                     />
-                  </div>
+                  </div> */}
                 </Col>
               </Row>
             </Col>
@@ -216,7 +216,7 @@ It's an Attitude!”
           <Link href={`/product/category/62eb7f05d7cf5491c3af7325`}>
             <div className="SubImageContainer">
               <Image
-                src={"/Picture/1.jpeg"}
+                src={"/Picture/1.png"}
                 width={349}
                 height={190}
                 className=""
@@ -235,7 +235,7 @@ It's an Attitude!”
           <Link href={`/product/category/61effa6f1a880a62b8284270`}>
             <div className="SubImageContainer">
               <Image
-                src={"/Picture/2.jpeg"}
+                src={"/Picture/2.png"}
                 width={349}
                 height={190}
                 className=""
@@ -253,7 +253,7 @@ It's an Attitude!”
           <Link href={`/product/category/61effa8d1a880a62b8284272`}>
             <div className="SubImageContainer">
               <Image
-                src={"/Picture/3.jpeg"}
+                src={"/Picture/3.png"}
                 width={349}
                 height={190}
                 className=""
@@ -272,7 +272,7 @@ It's an Attitude!”
           <Link href={`/product/category/61effaa01a880a62b8284274`}>
             <div className="SubImageContainer">
               <Image
-                src={"/Picture/4.jpeg"}
+                src={"/Picture/4.png"}
                 width={349}
                 height={190}
                 className=""

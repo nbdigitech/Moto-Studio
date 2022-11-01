@@ -72,9 +72,9 @@ function Header({ customData }) {
 
   const menus = [
     { id: 1, title: "HOME", href: "/", icon: "" },
-    { id: 2, title: "PRODUCTS", href: "/product" },
-    { id: 3, title: "BLOGS", href: "/blogs" },
-    { id: 4, title: "CONTACT", href: "/contact" },
+    { id: 2, title: "PRODUCTS", href: "/" },
+    { id: 3, title: "BLOGS", href: "/" },
+    { id: 4, title: "CONTACT", href: "/" },
   ];
 
   useEffect(() => {

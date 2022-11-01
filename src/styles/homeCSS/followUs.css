@@ -1,41 +1,40 @@
 .home-follow-us-img {
-    background: url(../../assets/images/home/1desk.jpg);
-    background-repeat: no-repeat !important;
-    background-size: 100% 100%;
-  }
-  
-.home-follow-button{
+  background: url(../../assets/images/home/fbinstrgram.png);
+  background-repeat: no-repeat !important;
+  background-size: 100% 100%;
+}
+
+.home-follow-button {
   width: 166px !important;
   height: 47.88px !important;
   box-sizing: border-box !important;
 }
 
+.home-follow-us-img-distance {
+  padding: 13% 18%;
+}
+
+.home-follow-icon {
+  font-size: 24px !important;
+  margin-bottom: 3px;
+}
+@media screen and (max-width: 480px) {
+  .home-follow-us-img {
+    /* background: url(../../assets/images/home/followMobile.png); */
+    background-repeat: no-repeat !important;
+    background-size: 100% 100%;
+  }
   .home-follow-us-img-distance {
-    padding: 13% 18%;
+    padding: 19% 5%;
   }
-  
- .home-follow-icon{
-   font-size: 24px !important;
-   margin-bottom: 3px;
- }
-  @media screen and (max-width: 480px) {
-    .home-follow-us-img {
-      /* background: url(../../assets/images/home/followMobile.png); */
-      background-repeat: no-repeat !important;
-      background-size: 100% 100%;
-    }
-    .home-follow-us-img-distance {
-      padding: 19% 5%;
-    }
-    .home-follow-button-mobile-media{
-      margin:-20px !important;
-    }
-    .home-follow-button-mobile-media a Button{
-     font-size: 10px;
-    }
-    .home-follow-button-mobile-media a .home-follow-icon{
-      height: 20px !important;
-      width: 20px !important;
-     }
+  .home-follow-button-mobile-media {
+    margin: -20px !important;
   }
-  
+  .home-follow-button-mobile-media a Button {
+    font-size: 10px;
+  }
+  .home-follow-button-mobile-media a .home-follow-icon {
+    height: 20px !important;
+    width: 20px !important;
+  }
+}

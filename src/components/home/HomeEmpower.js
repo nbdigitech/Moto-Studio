@@ -45,11 +45,20 @@ function HomeEmpower() {
             {/* From the heart of Chhattisgarh */}
             {impoweredData?.desc || "From our Hearts"}
           </p>
-          <p className="home-empower-img-text">
+          <p
+            className="home-empower-img-text"
+            style={{
+              backgroundColor: "white",
+              color: "black",
+              width: "fit-content",
+              margin: "10px auto",
+              padding: "0 10px",
+            }}
+          >
             {impoweredData?.titles || "Our Exclusive Brands"}
           </p>
           <div className="d-flex">
-            <div className="mx-auto" onClick={() => router.push("/about")}>
+            <div className="mx-auto" onClick={() => router.push("/")}>
               <Button text="KNOW MORE" className="home-empower-button" />
             </div>
           </div>
@@ -57,7 +66,7 @@ function HomeEmpower() {
       </div>
       <style jsx>{`
         .home-empower-img {
-          background-image: url(/Picture/car3.jpg);
+          background-image: url(/Picture/banner.png);
           background-size: cover;
         }
       `}</style>
