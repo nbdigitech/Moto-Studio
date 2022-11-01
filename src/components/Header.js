@@ -72,9 +72,10 @@ function Header({ customData }) {
 
   const menus = [
     { id: 1, title: "HOME", href: "/", icon: "" },
-    { id: 2, title: "PRODUCTS", href: "/" },
+    { id: 2, title: "SERVICES", href: "/" },
     { id: 3, title: "BLOGS", href: "/" },
-    { id: 4, title: "CONTACT", href: "/" },
+    { id: 4, title: "CONTACT US", href: "/" },
+    { id: 5, title: "GALLERY", href: "/" },
   ];
 
   useEffect(() => {
@@ -294,28 +295,16 @@ function Header({ customData }) {
           {/* <button onClick={()=>handleShow()}>show</button> */}
           <Navbar bg="light" expanded={expand}>
             <Navbar.Brand href="/" className="Logo_brand">
-              {websitename !== null ? (
-                <h1
-                  style={{
-                    fontSize: 25,
-                    fontWeight: 700,
-                    color: "#000",
-                  }}
-                >
-                  {websitename}
-                </h1>
-              ) : (
-                <Image
-                  className="Logo_icon"
-                  width={70}
-                  height={40}
-                  src={logo}
-                  alt="logo"
-                  unoptimized={true}
-                  loading="eager"
-                  layout="fixed"
-                />
-              )}
+              <Image
+                className="Logo_icon"
+                width={70}
+                height={40}
+                src={logo}
+                alt="logo"
+                unoptimized={true}
+                loading="eager"
+                layout="fixed"
+              />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="offcanvasNavbar" />
             <Navbar.Offcanvas
@@ -345,50 +334,6 @@ function Header({ customData }) {
                       </a>
                     </Link>
                   ))}
-                  <div className="position-relative mx-3" ref={connectmenuRef}>
-                    <button
-                      className="bg-transparent border-0 nav-link"
-                      onClick={() =>
-                        setConnectViewDropDown(!connectViewDropDown)
-                      }
-                    >
-                      CONNECT
-                    </button>
-                    {connectViewDropDown && (
-                      <ul
-                        className="dropdown-menu show position-absolute shadow rounded"
-                        style={{
-                          width: "16.5em",
-                          zIndex: 100,
-                        }}
-                      >
-                        <li onClick={() => setConnectViewDropDown(false)}>
-                          <Link href="/connect/consumerProgram">
-                            <a className="dropdown-item text-black">
-                              CONSUMER CONNECT PROGRAM
-                            </a>
-                          </Link>
-                        </li>
-                        <li onClick={() => setConnectViewDropDown(false)}>
-                          <Link href="/connect/forestLover">
-                            <a className="dropdown-item text-black">
-                              FOREST LOVERS CLUB
-                            </a>
-                          </Link>
-                        </li>
-                        {/*
-
-                          <li onClick={() => setConnectViewDropDown(false)}>
-                          <Link href="/connect/successStory">
-                          <a className="dropdown-item text-black">
-                          SUCCESS STORIES
-                          </a>
-                          </Link>
-                          </li>
-                        */}
-                      </ul>
-                    )}
-                  </div>
                   {/* eslint-disable-next-line  */}
                   {session ? (
                     <>

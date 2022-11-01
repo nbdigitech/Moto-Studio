@@ -90,7 +90,7 @@ function CommunityPage() {
         <div className=" Community-container">
           <div className="main-community">
             <div style={{ margin: "0 5px" }}>
-              <h1 className="Text">The Community</h1>
+              <h1 className="Text">About Us</h1>
               <hr className="my-4 Line " />
             </div>
             <div className="para-divb pb-5 communitypage-apply-media-query">
@@ -99,9 +99,9 @@ function CommunityPage() {
                 style={{ fontFamily: "Lato" }}
               >
                 <p>
-                  At The Detailing Mafia, we are determined in getting the car
-                  to look like, ‘what you thought was Good’ to ‘Is this really
-                  my Car?’
+                  At The Moto Studio, we are determined in getting the car to
+                  look like, ‘what you thought was Good’ to ‘Is this really my
+                  Car?’
                 </p>
                 <p>
                   We do not compromise on quality and offer our professional
@@ -115,12 +115,11 @@ function CommunityPage() {
                 <p>
                   Have a passion for car detailing? But want a platform that
                   adds wings to your career and helps you fly high? Then, the
-                  detailing mafia is the right choice for you. Join the Mafia’s
-                  family today and become an entrepreneur in the automotive
-                  detailing industry.
+                  Moto Studio is the right choice for you.
                 </p>
                 <p>
-                  SAME-DREAM The Mafia always stays true to its words. For any
+                  <span className="font-semibold">SAME-DREAM</span>
+                  The Moto Studio always stays true to its words. For any
                   queries and assistance, Call Us
                 </p>
               </div>
@@ -155,14 +154,12 @@ function CommunityPage() {
                           //   : Imageone
                           `/Picture/car${index + 1}.jpg`
                         }
-                        alt="Picture of the author"
+                        alt=""
                         // className="w-100"
                         // width={350}
                         // height={350}
                         layout="fill"
                         objectFit="cover"
-                        // unoptimized={true}
-                        // loading="eager"
                       />
                       {/* <div className="overlay">
                         <p className="Text-name">

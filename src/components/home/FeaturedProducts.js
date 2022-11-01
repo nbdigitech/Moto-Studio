@@ -43,7 +43,7 @@ function FeaturedProducts({ category }) {
   return (
     <>
       <h1 className="text-center mb-2 mt-md-5 mt-sm-5 feature-products-text feature-product-margin-top-media">
-        Featured Products
+        Our Services
       </h1>
       <div className="text-center">
         <hr className="text-center mb-5 Featured-products-hr m-auto" />
@@ -77,7 +77,13 @@ function FeaturedProducts({ category }) {
                       />
                     </div>
                     <p className="feature-products-texts feature-products-texts-media">
-                      {cat?.category_name || "Category Name"}
+                      {index === 0
+                        ? "Ceramic Coating"
+                        : index === 1
+                        ? "Car Detailing (Exterior)"
+                        : index === 2
+                        ? "Car Detailing (Interior)"
+                        : "Car Protection"}
                     </p>
                   </div>
                 );

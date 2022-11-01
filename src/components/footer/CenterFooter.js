@@ -4,7 +4,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { GrAmazon, GrFacebook, GrInstagram } from "react-icons/gr";
+import { GrFacebook, GrInstagram } from "react-icons/gr";
 import footerlogo from "../../../public/images/logo.png";
 import { apipath } from "../../pages/api/apiPath";
 import LastFooter from "./LastFooter";
@@ -45,7 +45,9 @@ function CenterFooter() {
                 <Row>
                   <Col sm={4} md={4} lg={4}>
                     <div className="footer-cg-herbal">
-                      <h6 className="footer-center-header ">SHOP</h6>
+                      <h6 className="footer-center-header ">
+                        Car Treatment Services
+                      </h6>
                       <div className="d-flex flex-column">
                         {category.length
                           ? [...category]
@@ -55,14 +57,15 @@ function CenterFooter() {
                                 index > 3 ? (
                                   ""
                                 ) : (
-                                  <Link
-                                    href={`/product/category/${cat._id}`}
-                                    key={cat._id}
-                                  >
-                                    <a className="footer-cg-para">
-                                      {cat.category_name}
-                                    </a>
-                                  </Link>
+                                  <a className="footer-cg-para">
+                                    {index === 0
+                                      ? "Ceramic Coating"
+                                      : index === 1
+                                      ? "Car Detailing (Exterior)"
+                                      : index === 2
+                                      ? "Car Detailing (Interior)"
+                                      : "Car Protection"}
+                                  </a>
                                 )
                               )
                           : null}
@@ -94,7 +97,7 @@ function CenterFooter() {
                       </div>
                     </div>
                   </Col>
-                  <Col sm={4} md={4} lg={4}>
+                  {/* <Col sm={4} md={4} lg={4}>
                     <div className="footer-cg-herbal">
                       <h6 className="footer-center-header">MY ACCOUNT</h6>
                       <div className="d-flex flex-column">
@@ -114,7 +117,7 @@ function CenterFooter() {
                         )}
                       </div>
                     </div>
-                  </Col>
+                  </Col> */}
                 </Row>
               </Col>
               <Col sm={12} lg={3}>
@@ -123,25 +126,18 @@ function CenterFooter() {
                     DIGITAL PRESENCE
                   </h6>
                   <div className="footer-center-icon  text-lg-start text-center mt-4">
-                    <a
-                      href="https://www.facebook.com/chhattisgarhherbals/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <a rel="noopener noreferrer">
                       {" "}
                       <GrFacebook className="cg-footer-icon" /> &nbsp; &nbsp;
                       &nbsp;
                     </a>
                     <a
-                      href="https:///www.instagram.com/cgherbals_/"
+                      href="https://www.instagram.com/motostudio_raipur/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <GrInstagram className="cg-footer-icon" /> &nbsp; &nbsp;
                       &nbsp;
-                    </a>
-                    <a href="" target="_blank" rel="noopener noreferrer">
-                      <GrAmazon className="cg-footer-icon" />
                     </a>
                   </div>
                 </div>

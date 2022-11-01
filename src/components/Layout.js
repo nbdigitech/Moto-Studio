@@ -8,7 +8,6 @@ import { apipath } from "../pages/api/apiPath";
 import Footer from "./Footer";
 import Header from "./Header";
 import { reducer } from "./Reducer";
-import SubHeader from "./SubHeader";
 
 export const CardContext = createContext();
 const initialState = {
@@ -367,15 +366,12 @@ function Layout({ children }) {
     >
       <div>
         <Head>
-          <link rel="icon" href="/favicon.png" />
-          <title>
-            Chhattisgarh Herbals | Official Website of Chhattisgarh Minor Forest
-            Produce Cooperative Federation
-          </title>
+          <link rel="icon" href="/logo.png" />
+          <title>Moto Studio</title>
         </Head>
 
         <Header customData={customData} />
-        <SubHeader />
+        {/* <SubHeader /> */}
         <main>{children}</main>
         <Footer />
 

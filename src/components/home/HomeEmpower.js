@@ -41,10 +41,9 @@ function HomeEmpower() {
     <>
       <div className="home-empower-img">
         <div className="home-empower-img-distance">
-          <p className="home-empower-img-para d-block">
-            {/* From the heart of Chhattisgarh */}
+          {/* <p className="home-empower-img-para d-block">
             {impoweredData?.desc || "From our Hearts"}
-          </p>
+          </p> */}
           <p
             className="home-empower-img-text"
             style={{

@@ -11,8 +11,7 @@ function HomeHeaderImg({ category }) {
   const [banner, setBanner] = useState({
     bannerImg: HomeHeader,
     bannerTitle: "Detailing is not a skill, It's an Attitude!",
-    bannerDesc:
-      "The forest grows and the forest provides . The women of the forest procure and create. Each product is handcrafted with care and love by the empowered women of these forest areas, endowing each product with a purity that is truly priceless.",
+    bannerDesc: "",
   });
 
   useEffect(() => {
@@ -25,9 +24,7 @@ function HomeHeaderImg({ category }) {
           bannerTitle:
             objData.data[0]?.titles ||
             " Detailing is not a skill, It's an Attitude!",
-          bannerDesc:
-            objData.data[0]?.description ||
-            "The forest grows and the forest provides . The women of the forest procure and create. Each product is handcrafted with care and love by the empowered women of these forest areas, endowing each product with a purity that is truly priceless.",
+          bannerDesc: objData.data[0]?.description || "",
         });
       } catch (error) {
         console.log(error);
@@ -170,8 +167,8 @@ It's an Attitude!”
                   </div>
                   <div className="">
                     <p className="home-eco-friendly col-lg-12">
-                      Welcome to The Detailing Mafia: One-Stop Solution to All
-                      Your Car Care Problems.
+                      Welcome to The Moto Studio: One-Stop Solution to All Your
+                      Car Care Problems.
                     </p>
                     <p className="home-eco-friendly col-lg-12">
                       “Perfection is in the Detail”, this is what we believe in

@@ -11,7 +11,6 @@ import HomeHeaderImg from "../../components/home/HomeHeaderImg";
 // import {apipath} from '../api/apiPath'
 
 function Home({ category }) {
-  console.log(category);
   // const { data: session } = useSession();
   // const { isLogin } = useContext(CardContext);
   // const router = useRouter();
