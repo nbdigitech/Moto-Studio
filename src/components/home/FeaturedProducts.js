@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 // import BeautyProducts from "../../assets/images/home/1 (1).png";
 // import AlternativeMedicine from "../../assets/images/home/1 (2).png";
@@ -39,6 +40,25 @@ function FeaturedProducts({ category }) {
       },
     ],
   };
+  const links = [
+    {
+      id: 1,
+      name: "car-detailing",
+    },
+
+    {
+      id: 2,
+      name: "car-protection",
+    },
+    {
+      id: 3,
+      name: "car-coating",
+    },
+    {
+      id: 4,
+      name: "car-accessories",
+    },
+  ];
 
   return (
     <>
@@ -52,14 +72,15 @@ function FeaturedProducts({ category }) {
       <div className="overflow-style">
         <div className="image-div1">
           <Slider {...settings}>
-            {categories?.length &&
-              [...categories]?.reverse().map((cat, index) => {
-                console.log("cat :>> ", index);
-                return (
+            {links.map((cat, index) => {
+              console.log("cat :>> ", index);
+              return (
+                <Link href={`${cat?.name}`} key={index}>
                   <div
                     className="image-div"
-                    key={cat._id}
-                    onClick={() => getCategoryId(cat?._id)}
+                    style={{
+                      cursor: "pointer",
+                    }}
                   >
                     <div className="rounded-circle zoom-in-img-wrapper">
                       <Image
@@ -86,8 +107,9 @@ function FeaturedProducts({ category }) {
                         : "Car Protection"}
                     </p>
                   </div>
-                );
-              })}
+                </Link>
+              );
+            })}
             {/* <div className="image-div">
                     <div className="rounded-circle zoom-in-img-wrapper">
                       <Image

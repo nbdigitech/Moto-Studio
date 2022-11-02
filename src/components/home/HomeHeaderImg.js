@@ -1,11 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import HomeHeader from "../../assets/images/home/homeHeaderMobile.png";
-import { apipath } from "../../pages/api/apiPath";
-import Button from "../button/ButtonLight";
 
 function HomeHeaderImg({ category }) {
   const [banner, setBanner] = useState({
@@ -14,24 +12,24 @@ function HomeHeaderImg({ category }) {
     bannerDesc: "",
   });
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch(`${apipath}/api/v1/home/banner/list`);
-        const objData = await res.json();
-        setBanner({
-          bannerImg: objData.data[0]?.images[0]?.img || HomeHeader,
-          bannerTitle:
-            objData.data[0]?.titles ||
-            " Detailing is not a skill, It's an Attitude!",
-          bannerDesc: objData.data[0]?.description || "",
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const res = await fetch(`${apipath}/api/v1/home/banner/list`);
+  //       const objData = await res.json();
+  //       setBanner({
+  //         bannerImg: objData.data[0]?.images[0]?.img || HomeHeader,
+  //         bannerTitle:
+  //           objData.data[0]?.titles ||
+  //           " Detailing is not a skill, It's an Attitude!",
+  //         bannerDesc: objData.data[0]?.description || "",
+  //       });
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
   const router = useRouter();
 
@@ -79,35 +77,27 @@ It's an Attitude!”
               </Col> */}
               <Col md={9} className="py-md-5 my-2">
                 <p className="home-header-head-mobile mt-md-5 mt-4">
-                  Detailing <br />
-                  is not <br /> a skill
+                  Detailing is not a skill
+                  <br />
+                  It's an Attitude!
                 </p>
                 {/* <div className="col-12 mt-3">
                   <p className="home-header-para-mobile">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
                 </div> */}
                 <div className="">
                   <p className="home-eco-friendly-mobile">
-                    Eco-friendly products from one of the largest women
-                    empowerment efforts in the world{" "}
+                    Welcome to The Moto Studio: One-Stop Solution to All Your
+                    Car Care Problems. “Perfection is in the Detail”, this is
+                    what we believe in
                     {/* ECO-FRIENDLY PRODUCTS FROM ONE OF THE LARGEST WOMEN
                     EMPOWERMENT EFFORTS IN THE WORLD{" "} */}
                   </p>
                   <p style={{ marginTop: "32px" }}>
-                    Each product is handcrafted with care and love by the
-                    empowered women of these forest areas, endowing each product
-                    with a purity that is truly priceless.
+                    We are called “The King of the Detailing World” by the
+                    Automotive Detailing Industry. Our skilled and trained
+                    personnel have turned ordinary looking cars into
+                    Fabulous-looking Ones.
                   </p>
-                </div>
-                <div className="col-12 ">
-                  <div
-                    className="mb-md-5  mt-md-3 mb-0 home-header-button-mobile"
-                    onClick={() => router.push("/product")}
-                  >
-                    <Button
-                      className="home-header-button "
-                      text="JOIN THE ECO-REVOLUTION &nbsp; &nbsp; &gt;"
-                    />
-                  </div>
                 </div>
               </Col>
             </Row>
@@ -210,7 +200,7 @@ It's an Attitude!”
           md={6}
           className="BannerBottomImages px-2 col-lg-3 BannerBottomImages-media-query-mobile"
         >
-          <Link href={`/product/category/62eb7f05d7cf5491c3af7325`}>
+          <Link href={`/car-detailing`}>
             <div className="SubImageContainer">
               <Image
                 src={"/Picture/1.png"}
@@ -228,8 +218,7 @@ It's an Attitude!”
           md={6}
           className="BannerBottomImages px-2 mb-2 col-lg-3 BannerBottomImages-media-query-mobile"
         >
-          {/*  */}
-          <Link href={`/product/category/61effa6f1a880a62b8284270`}>
+          <Link href={`/car-coating`}>
             <div className="SubImageContainer">
               <Image
                 src={"/Picture/2.png"}
@@ -247,7 +236,7 @@ It's an Attitude!”
           md={6}
           className="BannerBottomImages  px-2 mb-2 col-lg-3 BannerBottomImages-media-query-mobile-snav "
         >
-          <Link href={`/product/category/61effa8d1a880a62b8284272`}>
+          <Link href={`/car-protection`}>
             <div className="SubImageContainer">
               <Image
                 src={"/Picture/3.png"}
@@ -261,12 +250,11 @@ It's an Attitude!”
             </div>
           </Link>
         </Col>
-        {/*  */}
         <Col
           md={6}
           className="BannerBottomImages px-2 col-lg-3 BannerBottomImages-media-query-mobile-tnav"
         >
-          <Link href={`/product/category/61effaa01a880a62b8284274`}>
+          <Link href={`/car-accessories`}>
             <div className="SubImageContainer">
               <Image
                 src={"/Picture/4.png"}

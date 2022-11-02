@@ -1,5 +1,5 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { apipath } from "../pages/api/apiPath";
 import ButtonLight from "./button/ButtonLight";
@@ -52,22 +52,22 @@ function ContactForm() {
   };
 
   const [grievCat, setGrievCat] = useState([]);
-  useEffect(() => {
-    const getGrievanceCategory = () => {
-      fetch(`${apipath}/api/v1/grievance_category/list`)
-        .then((response) => response.json())
-        .then((objData) => {
-          if (objData?.data?.length) {
-            const filteredData = objData?.data.filter(
-              (data) => data.status === true
-            );
-            setGrievCat(filteredData);
-          }
-        })
-        .catch((error) => console.log(error));
-    };
-    getGrievanceCategory();
-  }, []);
+  // useEffect(() => {
+  //   const getGrievanceCategory = () => {
+  //     fetch(`${apipath}/api/v1/grievance_category/list`)
+  //       .then((response) => response.json())
+  //       .then((objData) => {
+  //         if (objData?.data?.length) {
+  //           const filteredData = objData?.data.filter(
+  //             (data) => data.status === true
+  //           );
+  //           setGrievCat(filteredData);
+  //         }
+  //       })
+  //       .catch((error) => console.log(error));
+  //   };
+  //   getGrievanceCategory();
+  // }, []);
 
   const submitEvent = async (e) => {
     e.preventDefault();
