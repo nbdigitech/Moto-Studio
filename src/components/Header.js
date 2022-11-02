@@ -6,7 +6,7 @@ import { BsFillCartFill, BsSearch, BsX } from "react-icons/bs";
 // import logo from "/public/images/CGHerbalsLogo.png";
 import logo from "/public/images/logo.png";
 // import menubar from "../../public/images/MenuBurger.png";
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { AiOutlineClose, AiOutlineMenuFold } from "react-icons/ai";
 import { CardContext } from "../components/Layout";
@@ -297,8 +297,8 @@ function Header({ customData }) {
             <Navbar.Brand href="/" className="Logo_brand">
               <Image
                 className="Logo_icon"
-                width={70}
-                height={40}
+                width={120}
+                height={50}
                 src={logo}
                 alt="logo"
                 unoptimized={true}
@@ -334,8 +334,7 @@ function Header({ customData }) {
                       </a>
                     </Link>
                   ))}
-                  {/* eslint-disable-next-line  */}
-                  {session ? (
+                  {/* {session ? (
                     <>
                       <Link href="/auth/UserProfile">
                         <a className="nav-link mx-3" onClick={handleClose}>
@@ -371,7 +370,7 @@ function Header({ customData }) {
                         LOGIN
                       </a>
                     </Link>
-                  )}
+                  )} */}
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

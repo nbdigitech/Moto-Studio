@@ -44,7 +44,7 @@ function HomeHeaderImg({ category }) {
         className="home-head-img-mobile"
         style={{
           // backgroundImage: `url(${banner.bannerImg})`,
-          backgroundImage: `/public/images/carbanner.jpg`,
+          backgroundImage: `url(/images/mainbanner.png)`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "75% 100%",

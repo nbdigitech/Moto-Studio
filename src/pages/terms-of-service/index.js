@@ -17,12 +17,11 @@ const termsOfService = () => {
         <h4 className="text-start">Overview</h4>
         <section>
           The ecommerce store - is managed. By Avani Ayurved Pvt Lt- Authorised
-          distributor of Chhattisgarh Herbals. Throughout the site, the terms
-          “we”, “us” and “our” refer to Chhattisgarh Herbals. Chhattisgarh
-          Herbals offers this website, including all information, tools and
-          services available from this site to you, the user, conditioned upon
-          your acceptance of all terms, conditions, policies and notices stated
-          here.
+          distributor of Moto Studio. Throughout the site, the terms “we”, “us”
+          and “our” refer to Moto Studio. Moto Studio offers this website,
+          including all information, tools and services available from this site
+          to you, the user, conditioned upon your acceptance of all terms,
+          conditions, policies and notices stated here.
         </section>
 
         <section>
@@ -308,19 +307,19 @@ const termsOfService = () => {
           merchantability, merchantable quality, fitness for a particular
           purpose, durability, title, and non-infringement.
           <br />
-          In no case shall Chhattisgarh-Herbals-india, our directors, officers,
-          employees, affiliates, agents, contractors, interns, suppliers,
-          service providers or licensors be liable for any injury, loss, claim,
-          or any direct, indirect, incidental, punitive, special, or
-          consequential damages of any kind, including, without limitation lost
-          profits, lost revenue, lost savings, loss of data, replacement costs,
-          or any similar damages, whether based in contract, tort (including
-          negligence), strict liability or otherwise, arising from your use of
-          any of the service or any products procured using the service, or for
-          any other claim related in any way to your use of the service or any
-          product, including, but not limited to, any errors or omissions in any
-          content, or any loss or damage of any kind incurred as a result of the
-          use of the service or any content (or product) posted, transmitted, or
+          In no case shall Moto Studio, our directors, officers, employees,
+          affiliates, agents, contractors, interns, suppliers, service providers
+          or licensors be liable for any injury, loss, claim, or any direct,
+          indirect, incidental, punitive, special, or consequential damages of
+          any kind, including, without limitation lost profits, lost revenue,
+          lost savings, loss of data, replacement costs, or any similar damages,
+          whether based in contract, tort (including negligence), strict
+          liability or otherwise, arising from your use of any of the service or
+          any products procured using the service, or for any other claim
+          related in any way to your use of the service or any product,
+          including, but not limited to, any errors or omissions in any content,
+          or any loss or damage of any kind incurred as a result of the use of
+          the service or any content (or product) posted, transmitted, or
           otherwise made available via the service, even if advised of their
           possibility. Because some states or jurisdictions do not allow the
           exclusion or the limitation of liability for consequential or
@@ -330,14 +329,14 @@ const termsOfService = () => {
 
         <h4>SECTION 14 - INDEMNIFICATION</h4>
         <section>
-          You agree to indemnify, defend and hold harmless
-          Chhattisgarh-Herbals-india and our parent, subsidiaries, affiliates,
-          partners, officers, directors, agents, contractors, licensors, service
-          providers, subcontractors, suppliers, interns and employees, harmless
-          from any claim or demand, including reasonable attorneys’ fees, made
-          by any third-party due to or arising out of your breach of these Terms
-          of Service or the documents they incorporate by reference, or your
-          violation of any law or the rights of a third-party.
+          You agree to indemnify, defend and hold harmless Moto Studio and our
+          parent, subsidiaries, affiliates, partners, officers, directors,
+          agents, contractors, licensors, service providers, subcontractors,
+          suppliers, interns and employees, harmless from any claim or demand,
+          including reasonable attorneys’ fees, made by any third-party due to
+          or arising out of your breach of these Terms of Service or the
+          documents they incorporate by reference, or your violation of any law
+          or the rights of a third-party.
         </section>
 
         <h4>SECTION 15 - SEVERABILITY</h4>
@@ -405,7 +404,7 @@ const termsOfService = () => {
         <h4>SECTION 20 - CONTACT INFORMATION</h4>
         <section>
           Questions about the Terms of Service should be sent to us at
-          http://chhattisgarhherbal.com.
+          https://motostudio.in/
         </section>
       </div>
 

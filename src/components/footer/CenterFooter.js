@@ -79,17 +79,12 @@ function CenterFooter() {
                       <h6 className="footer-center-header">SUPPORT</h6>
                       <div className="d-flex flex-column">
                         {[
-                          { title: "Contact", href: "/contact" },
+                          { title: "Contact Us", href: "/contact" },
                           { title: "Privacy Policy", href: "/privacy-policy" },
                           {
                             title: "Terms of Service",
                             href: "/terms-of-service",
                           },
-                          {
-                            title: "Shipping Policy",
-                            href: "/shipping-policy",
-                          },
-                          { title: "Refund Policy", href: "/refund-policy" },
                         ].map((ele, index) => (
                           <Link href={ele.href} key={index}>
                             <a className="footer-cg-para">{ele.title}</a>
