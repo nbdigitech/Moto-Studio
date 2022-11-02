@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { GrFacebook, GrInstagram } from "react-icons/gr";
+import { RiWhatsappFill } from "react-icons/ri";
 import footerlogo from "../../../public/images/logo.png";
 import { apipath } from "../../pages/api/apiPath";
 import LastFooter from "./LastFooter";
@@ -97,27 +98,22 @@ function CenterFooter() {
                       </div>
                     </div>
                   </Col>
-                  {/* <Col sm={4} md={4} lg={4}>
+                  <Col sm={4} md={4} lg={4}>
                     <div className="footer-cg-herbal">
-                      <h6 className="footer-center-header">MY ACCOUNT</h6>
+                      <h6 className="footer-center-header">Contact Us</h6>
                       <div className="d-flex flex-column">
-                        {session ? (
-                          <>
-                            <Link href={`/shopping/Shopping`}>
-                              <a className="footer-cg-para">My Cart</a>
-                            </Link>
-                            <Link href={`/auth/UserProfile?activeTab=2`}>
-                              <a className="footer-cg-para">My Order</a>
-                            </Link>
-                          </>
-                        ) : (
-                          <Link href={`/auth/Login`}>
-                            <a className="footer-cg-para">Login</a>
-                          </Link>
-                        )}
+                        <a className="footer-cg-para">
+                          Infront of kps junior school,St Xaviers school, Road,
+                          Avanti Vihar, Raipur, Chhattisgarh 492006
+                        </a>
+                        <a className="footer-cg-para">‪+91 70000 28760‬</a>
+
+                        <a className="footer-cg-para">
+                          https://g.co/kgs/vDd76w
+                        </a>
                       </div>
                     </div>
-                  </Col> */}
+                  </Col>
                 </Row>
               </Col>
               <Col sm={12} lg={3}>
@@ -138,6 +134,14 @@ function CenterFooter() {
                     >
                       <GrInstagram className="cg-footer-icon" /> &nbsp; &nbsp;
                       &nbsp;
+                    </a>
+                    <a
+                      href="https://api.whatsapp.com/send?phone=917000028760"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <RiWhatsappFill className="cg-footer-icon" /> &nbsp;
+                      &nbsp; &nbsp;
                     </a>
                   </div>
                 </div>

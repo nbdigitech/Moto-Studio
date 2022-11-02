@@ -134,42 +134,40 @@ function CommunityPage() {
           </div>
 
           <Row className="m-0">
-            {community.length &&
-              community.map((row, index) => {
-                return (
-                  <Col lg={4} md={6} className="image1 Gallery" key={row?._id}>
-                    <div
-                      className="position-relative"
-                      style={{
-                        height: 350,
-                        margin: "auto",
-                        boxSizing: "border-box",
-                      }}
-                      onClick={() => router.push(`/product/${row?._id}`)}
-                    >
-                      <Image
-                        src={
-                          // row?.images?.length
-                          //   ? row?.images[0]?.img || Imageone
-                          //   : Imageone
-                          `/Picture/car${index + 1}.jpg`
-                        }
-                        alt=""
-                        // className="w-100"
-                        // width={350}
-                        // height={350}
-                        layout="fill"
-                        objectFit="cover"
-                      />
-                      {/* <div className="overlay">
+            {[0, 1, 2].map((row, index) => {
+              return (
+                <Col lg={4} md={6} className="image1 Gallery" key={index}>
+                  <div
+                    className="position-relative"
+                    style={{
+                      height: 350,
+                      margin: "auto",
+                      boxSizing: "border-box",
+                    }}
+                  >
+                    <Image
+                      src={
+                        // row?.images?.length
+                        //   ? row?.images[0]?.img || Imageone
+                        //   : Imageone
+                        `/Picture/car${index + 1}.jpg`
+                      }
+                      alt=""
+                      // className="w-100"
+                      // width={350}
+                      // height={350}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                    {/* <div className="overlay">
                         <p className="Text-name">
                           {row?.products?.title || ""}
                         </p>
                       </div> */}
-                    </div>
-                  </Col>
-                );
-              })}
+                  </div>
+                </Col>
+              );
+            })}
           </Row>
         </div>
       </div>

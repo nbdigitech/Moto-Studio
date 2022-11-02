@@ -1,6 +1,7 @@
 // import { useEffect, useContext } from "react";
 // import { useSession } from "next-auth/react";
 // import { useRouter } from "next/router";
+import ContactForm from "../../components/ContactForm";
 import CommunityPage from "../../components/home/CommunityPage";
 import FeaturedProducts from "../../components/home/FeaturedProducts";
 import HomeEmpower from "../../components/home/HomeEmpower";
@@ -44,7 +45,9 @@ function Home({ category }) {
       {/* <VisitTheShop /> */}
 
       <HomeEmpower />
+      <ContactForm />
       <CommunityPage />
+      {/* <Services /> */}
       <HomeFollowUs />
     </div>
   );

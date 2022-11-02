@@ -179,8 +179,27 @@ function ContactForm() {
   return (
     <>
       <div className="contact-container">
-        <div className="container-fluid">
-          <Container className="demo1">
+        <div className="container-fluid contact">
+          <Container
+            className="demo1"
+            style={{
+              display: "flex ",
+              alignItems: "center",
+              justifyContent: "end",
+            }}
+          >
+            <div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59510.503137682186!2d81.62783833577852!3d21.215725439606523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dd4b51b6bc55%3A0x15861f4804a3f788!2sMoto%20Studio!5e0!3m2!1sen!2sin!4v1667365884657!5m2!1sen!2sin"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="iframe"
+              />
+            </div>
+          </Container>
+          <Container className="demo1" style={{}}>
             <div>
               {/* <div className="my-4">
                 <p className="about-empowered-heading">How can we help?</p>
@@ -211,8 +230,7 @@ function ContactForm() {
               )}
               <hr className="contact-form-hr mx-auto mb-4" />
               <p className="contact-para mt-4">
-                If you have any questions, or are looking to collaborate, we are
-                all ears!
+                If you have any questions we are all ears!
               </p>
             </div>
 
@@ -287,7 +305,7 @@ function ContactForm() {
                 </Row>
                 <div
                   className="contac-sent-message text-center mt-3"
-                  onClick={submitEvent}
+                  // onClick={submitEvent}
                 >
                   <ButtonLight onClick={submitEvent} text="SEND MESSAGE" />
                 </div>
