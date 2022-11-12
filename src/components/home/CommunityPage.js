@@ -150,7 +150,7 @@ function CommunityPage() {
                         // row?.images?.length
                         //   ? row?.images[0]?.img || Imageone
                         //   : Imageone
-                        `/Picture/car${index + 1}.jpg`
+                        `/images/footer${index + 1}.jpg`
                       }
                       alt=""
                       // className="w-100"

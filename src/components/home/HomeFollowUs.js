@@ -23,7 +23,11 @@ function HomeFollowUs() {
               </a>
             </div>
             <div className="home-follow-button-mobile-media">
-              <a rel="noopener noreferrer">
+              <a
+                href="https://www.facebook.com/motostudioraipur"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   className="home-follow-button"
                   icon={<FaFacebook className="home-follow-icon" />}

@@ -1,4 +1,5 @@
 import React from "react";
+import ButtonLight from "../components/button/ButtonLight";
 
 const CarDetailing = () => {
   return (
@@ -69,6 +70,17 @@ const CarDetailing = () => {
           in the business, ensuring you go out with that new car feeling.
         </p>
       </div>
+      <a
+        href="tel:7000028760‬"
+        className="contac-sent-message text-center mt-3"
+      >
+        <ButtonLight
+          text="Click To Call"
+          style={{
+            backgroundColor: "#000",
+          }}
+        />
+      </a>
     </div>
   );
 };

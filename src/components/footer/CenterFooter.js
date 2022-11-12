@@ -25,6 +25,25 @@ function CenterFooter() {
     };
     fetchData();
   }, []);
+  const links = [
+    {
+      id: 1,
+      name: "car-coating",
+    },
+
+    {
+      id: 2,
+      name: "car-detailing-exterior",
+    },
+    {
+      id: 3,
+      name: "car-detailing-interior",
+    },
+    {
+      id: 4,
+      name: "car-protection",
+    },
+  ];
 
   return (
     <>
@@ -50,26 +69,27 @@ function CenterFooter() {
                         Car Treatment Services
                       </h6>
                       <div className="d-flex flex-column">
-                        {category.length
-                          ? [...category]
-                              .reverse()
-                              .slice(1, 5)
-                              .map((cat, index) =>
-                                index > 3 ? (
-                                  ""
-                                ) : (
-                                  <a className="footer-cg-para">
-                                    {index === 0
-                                      ? "Ceramic Coating"
-                                      : index === 1
-                                      ? "Car Detailing (Exterior)"
-                                      : index === 2
-                                      ? "Car Detailing (Interior)"
-                                      : "Car Protection"}
-                                  </a>
-                                )
-                              )
-                          : null}
+                        {links.map((cat, index) => {
+                          console.log("cat :>> ", index);
+                          return (
+                            <Link href={`${cat?.name}`} key={index}>
+                              <p
+                                className="footer-cg-para"
+                                style={{
+                                  cursor: "pointer",
+                                }}
+                              >
+                                {index === 0
+                                  ? "Ceramic Coating"
+                                  : index === 1
+                                  ? "Car Detailing (Exterior)"
+                                  : index === 2
+                                  ? "Car Detailing (Interior)"
+                                  : "Car Protection"}
+                              </p>
+                            </Link>
+                          );
+                        })}
                       </div>
                     </div>
                   </Col>
@@ -101,9 +121,16 @@ function CenterFooter() {
                           Infront of kps junior school,St Xaviers school, Road,
                           Avanti Vihar, Raipur, Chhattisgarh 492006
                         </a>
-                        <a className="footer-cg-para">‪+91 70000 28760‬</a>
+                        <a className="footer-cg-para" href="tel:7000028760‬">
+                          ‪+91 70000 28760‬
+                        </a>
 
-                        <a className="footer-cg-para">
+                        <a
+                          className="footer-cg-para"
+                          href="https://g.co/kgs/vDd76w"
+                          target={"_blank"}
+                          rel="noreferrer"
+                        >
                           https://g.co/kgs/vDd76w
                         </a>
                       </div>
@@ -117,7 +144,11 @@ function CenterFooter() {
                     DIGITAL PRESENCE
                   </h6>
                   <div className="footer-center-icon  text-lg-start text-center mt-4">
-                    <a rel="noopener noreferrer">
+                    <a
+                      href="https://www.facebook.com/motostudioraipur"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       {" "}
                       <GrFacebook className="cg-footer-icon" /> &nbsp; &nbsp;
                       &nbsp;

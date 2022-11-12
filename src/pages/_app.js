@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { SessionProvider } from "next-auth/react";
 import { useRouter } from "next/router";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 import Layout from "../components/Layout";
 import "../styles/globals.css";
 
@@ -56,9 +57,17 @@ function MyApp({ Component, pageProps }) {
           ]
         }
       />
+
       <SessionProvider session={pageProps.session}>
         <Layout>
           <Component {...pageProps} />
+          <a
+            href="https://api.whatsapp.com/send?phone=917000028760"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FloatingWhatsApp phoneNumber="‪7000028760‬" onClick={() => {}} />
+          </a>
         </Layout>
       </SessionProvider>
     </>
