@@ -77,6 +77,7 @@ function ContactForm() {
             message: "",
           });
           sendEmail(jsonData);
+          sendEmail2(jsonData);
         }
       } else {
         alert("All field is required");
@@ -98,6 +99,30 @@ function ContactForm() {
       .send(
         "service_bm4ik2t",
         "template_hnpif37",
+        templatePrams,
+        "jUEhdpTCUgLCMTHkC"
+      )
+      .then(
+        (result) => {
+          console.log(result, "success");
+        },
+        (error) => {
+          console.log(error, "error");
+        }
+      );
+  };
+  const sendEmail2 = (result) => {
+    console.log(result);
+    var templatePrams = {
+      mailFrom: result.contactForm.email,
+      userName: result.contactForm.first_name,
+      content: result.contactForm.message,
+      subject: result.contactForm.subject,
+    };
+    emailjs
+      .send(
+        "service_bm4ik2t",
+        "template_tvohnwq",
         templatePrams,
         "jUEhdpTCUgLCMTHkC"
       )
