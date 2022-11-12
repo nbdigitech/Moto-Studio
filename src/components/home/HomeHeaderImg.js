@@ -236,7 +236,7 @@ It's an Attitude!”
           md={6}
           className="BannerBottomImages  px-2 mb-2 col-lg-3 BannerBottomImages-media-query-mobile-snav "
         >
-          <Link href={`/car-protection`}>
+          <Link href="/car-protection">
             <div className="SubImageContainer">
               <Image
                 src={"/Picture/3.png"}

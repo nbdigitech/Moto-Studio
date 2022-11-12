@@ -40,7 +40,7 @@
 }
 .row > * {
   flex-shrink: 0;
-  width: 100%;
+  /* width: 100%; */
   max-width: 100%;
   /* padding-right:1rem !important; */
   /* padding-left: 1rem !important; */

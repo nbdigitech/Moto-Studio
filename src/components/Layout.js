@@ -1,5 +1,4 @@
 import { useSession } from "next-auth/react";
-import Head from "next/head";
 import Router, { useRouter } from "next/router";
 import React, { createContext, useEffect, useReducer, useState } from "react";
 import Toast from "react-bootstrap/Toast";
@@ -365,10 +364,10 @@ function Layout({ children }) {
       }}
     >
       <div>
-        <Head>
+        {/* <Head>
           <link rel="icon" href="/logo.png" />
           <title>Moto Studio</title>
-        </Head>
+        </Head> */}
 
         <Header customData={customData} />
         {/* <SubHeader /> */}

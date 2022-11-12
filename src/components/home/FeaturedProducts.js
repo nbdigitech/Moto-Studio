@@ -43,20 +43,20 @@ function FeaturedProducts({ category }) {
   const links = [
     {
       id: 1,
-      name: "car-detailing",
+      name: "car-coating",
     },
 
     {
       id: 2,
-      name: "car-protection",
+      name: "car-detailing-exterior",
     },
     {
       id: 3,
-      name: "car-coating",
+      name: "car-detailing-interior",
     },
     {
       id: 4,
-      name: "car-accessories",
+      name: "car-protection",
     },
   ];
 

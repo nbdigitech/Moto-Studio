@@ -1,10 +1,10 @@
 import React from "react";
 
-const CarProtection = () => {
+const CarDetailing = () => {
   return (
     <div>
       <h1 className="text-center mb-2 mt-md-5 mt-sm-5 feature-products-text feature-product-margin-top-media">
-        Car Protection
+        Car Detailing (Exterior)
       </h1>
       <div className="text-center">
         <hr className="text-center mb-5 Featured-products-hr m-auto" />
@@ -18,7 +18,7 @@ const CarProtection = () => {
           margin: "0 2rem",
         }}
       >
-        Best Car Protection Service in Raipur Chhattisgarh
+        Best Car Detailing(exterior) Service in Raipur Chhattisgarh
       </h2>
       <div
         style={{
@@ -31,41 +31,30 @@ const CarProtection = () => {
             fontSize: "1.2rem",
           }}
         >
-          Everyone likes a new and shiny car when it comes out fresh from a
-          showroom but as it ages, a variety of harmful external elements such
-          as dust, dirt, sunlight etc. decrease its beauty and make you wish for
-          a new Car.
+          It feels great to stay behind the steering and enjoy the pleasure of
+          riding. But, how many times have you wondered whats happening to the
+          exterior of your Car while you are driving it?
         </p>
-        <br />
         <p
           style={{
             fontSize: "1.2rem",
           }}
         >
-          But it’s not needed at all as our premium and top-quality protection
-          services restore a vehicle back to its original finish and make it
-          stand out from other Cars on the road.
-        </p>
-        <br />
-        <p
-          style={{
-            fontSize: "1.2rem",
-          }}
-        >
-          It adds more shine, elegance, and class to your vehicle and makes you
-          want to drive it more and more as you get the feeling of driving a
-          brand-new car every time you ride it.
+          Its constantly affected by harmful elements which often lead to a
+          worn-out, scratched, and dull appearance. So, to make it look how it
+          looked when it was new, we conduct a premium detailing process,
+          wherein the focus lies on the following points:
         </p>
         <ul>
-          Benefits of Protection
-          <li>It restores the vehicle to its shiny finish.</li>
-          <li>It reveals the true beauty of your cars surface.</li>
-          <li>It protects the car from harmful sunlight and UV rays.</li>
-          <li>Shields the surface against chemical stains & Dirt.</li>
           <li>
-            Makes the surface of the car highly hydrophobic i.e. super easy to
-            clean.
+            Complete exterior car detailing including painted surface, wheels,
+            alloys, headlight-tailight, windshields, chrome parts, and paint
+            correction.
           </li>
+          <li>Paint depth inspection.</li>
+          <li>Scratch lightening.</li>
+          <li>Swirls marks removal.</li>
+          <li>Dirt & grime removal through cleaners & degreasers.</li>
         </ul>
         <br />
         <p
@@ -84,4 +73,4 @@ const CarProtection = () => {
   );
 };
 
-export default CarProtection;
+export default CarDetailing;
