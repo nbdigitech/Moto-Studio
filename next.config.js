@@ -13,7 +13,7 @@ module.exports = {
     FACEBOOK_CLIENT_SECRET: "be4a34a7467ff38344fb08d31abb24d1",
     NEXTAUTH_URL: "https://www.chhattisgarhherbal.com",
     MONGO_URI:
-      "mongodb+srv://tahsinchouhan:Tahsin2000@cluster0.j09luk7.mongodb.net/test",
+      "mongodb+srv://moto-studio:moto-studio@cluster0.vpjz4ly.mongodb.net/test",
     // NEXTAUTH_URL:'http://localhost:3000'
   },
   // distDir: '.next',

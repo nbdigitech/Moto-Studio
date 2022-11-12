@@ -1,3 +1,4 @@
+import emailjs from "@emailjs/browser";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React, { useRef, useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
@@ -52,28 +53,12 @@ function ContactForm() {
   };
 
   const [grievCat, setGrievCat] = useState([]);
-  // useEffect(() => {
-  //   const getGrievanceCategory = () => {
-  //     fetch(`${apipath}/api/v1/grievance_category/list`)
-  //       .then((response) => response.json())
-  //       .then((objData) => {
-  //         if (objData?.data?.length) {
-  //           const filteredData = objData?.data.filter(
-  //             (data) => data.status === true
-  //           );
-  //           setGrievCat(filteredData);
-  //         }
-  //       })
-  //       .catch((error) => console.log(error));
-  //   };
-  //   getGrievanceCategory();
-  // }, []);
 
   const submitEvent = async (e) => {
     e.preventDefault();
     try {
       if (first_name && last_name && email && subject && message) {
-        const response = await fetch(apipath + "/api/v1/contact/create", {
+        const response = await fetch("/api/contact", {
           method: "post",
           headers: {
             "Content-Type": "application/json",
@@ -81,7 +66,8 @@ function ContactForm() {
           body: JSON.stringify(inputText),
         });
         const jsonData = await response.json();
-        if (jsonData.data) {
+        console.log(jsonData);
+        if (jsonData.contactForm) {
           setMsg("Your Query has been Sent Successfully");
           setInputText({
             first_name: "",
@@ -90,6 +76,7 @@ function ContactForm() {
             subject: "",
             message: "",
           });
+          sendEmail(jsonData);
         }
       } else {
         alert("All field is required");
@@ -99,7 +86,30 @@ function ContactForm() {
       console.log(error);
     }
   };
-
+  const sendEmail = (result) => {
+    console.log(result);
+    var templatePrams = {
+      to_email: result.contactForm.email,
+      to_name: result.contactForm.first_name,
+      content:
+        "Your Contact request has been Sucessfully registered, we will reach you shortly",
+    };
+    emailjs
+      .send(
+        "service_bm4ik2t",
+        "template_hnpif37",
+        templatePrams,
+        "jUEhdpTCUgLCMTHkC"
+      )
+      .then(
+        (result) => {
+          console.log(result, "success");
+        },
+        (error) => {
+          console.log(error, "error");
+        }
+      );
+  };
   const submitEventGrievance = async (e) => {
     e.preventDefault();
     try {
@@ -305,7 +315,7 @@ function ContactForm() {
                 </Row>
                 <div
                   className="contac-sent-message text-center mt-3"
-                  // onClick={submitEvent}
+                  onClick={submitEvent}
                 >
                   <ButtonLight onClick={submitEvent} text="SEND MESSAGE" />
                 </div>
