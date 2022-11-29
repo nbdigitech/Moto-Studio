@@ -1,5 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { useRouter } from "next/router";
 import React, { useRef, useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { apipath } from "../pages/api/apiPath";
@@ -14,6 +15,7 @@ function ContactForm() {
     subject: "",
     message: "",
   });
+  const router = useRouter();
 
   const [inputTextGrievance, setInputTextGrievance] = useState({
     first_name_grievance: "",
@@ -78,6 +80,9 @@ function ContactForm() {
           });
           sendEmail(jsonData);
           sendEmail2(jsonData);
+          setTimeout(() => {
+            router.push("/thankyou");
+          }, 2000);
         }
       } else {
         alert("All field is required");
