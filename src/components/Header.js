@@ -6,13 +6,13 @@ import { BsFillCartFill, BsSearch, BsX } from "react-icons/bs";
 // import logo from "/public/images/CGHerbalsLogo.png";
 import logo from "/public/images/logo.png";
 // import menubar from "../../public/images/MenuBurger.png";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { AiOutlineClose, AiOutlineMenuFold } from "react-icons/ai";
 import { CardContext } from "../components/Layout";
 import { apipath } from "../pages/api/apiPath";
 
-function Header({ customData }) {
+function Header() {
   const { totalItem, userLogout } = useContext(CardContext);
   const { data: session } = useSession();
   const [activeIcon, setActiveIcon] = useState(false);
@@ -23,7 +23,6 @@ function Header({ customData }) {
   const [searchText, setSearchText] = useState("");
   const [searchData, setSearchData] = useState([]);
   const [isShrunk, setShrunk] = useState(false);
-  const [websitename, setWebName] = useState(null);
   const usermenuRef = useRef();
   const connectmenuRef = useRef();
 
@@ -71,7 +70,8 @@ function Header({ customData }) {
   });
 
   const menus = [
-    { id: 1, title: "HOME", href: "/", icon: "" },
+    { id: 1, title: "HOME", href: "/" },
+    { id: 2, title: "PRODUCTS", href: "/product" },
     { id: 2, title: "SERVICES", href: "/" },
     { id: 3, title: "BLOGS", href: "/" },
     { id: 4, title: "CONTACT US", href: "/" },
@@ -106,11 +106,7 @@ function Header({ customData }) {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  useEffect(() => {
-    const name = localStorage.getItem("websitename");
-    setWebName(name);
-  });
-  const { id } = router.query;
+  // console.log(isShrunk);
 
   return (
     <>
@@ -131,27 +127,15 @@ function Header({ customData }) {
           >
             <Navbar.Brand href="/">
               <div>
-                {websitename !== null && id ? (
-                  <h1
-                    style={{
-                      fontSize: 25,
-                      fontWeight: 700,
-                      color: "#000",
-                    }}
-                  >
-                    {websitename}
-                  </h1>
-                ) : (
-                  <Image
-                    src={logo}
-                    width={isShrunk ? 100 : 160}
-                    height={isShrunk ? 46 : 80}
-                    alt="logo"
-                    unoptimized={true}
-                    loading="eager"
-                    layout="fixed"
-                  />
-                )}
+                <Image
+                  src={logo}
+                  width={isShrunk ? 100 : 130}
+                  height={isShrunk ? 46 : 70}
+                  alt="logo"
+                  unoptimized={true}
+                  loading="eager"
+                  layout="fixed"
+                />
               </div>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -170,7 +154,7 @@ function Header({ customData }) {
                 ))}
                 {/* eslint-disable-next-line  */}
 
-                {/* <div className="position-relative" ref={connectmenuRef}>
+                <div className="position-relative" ref={connectmenuRef}>
                   <button
                     className="bg-transparent border-0 nav-link reduce-margin-gap-header"
                     onClick={() => setConnectViewDropDown(!connectViewDropDown)}
@@ -196,12 +180,16 @@ function Header({ customData }) {
                           <a className=" nav-link mx-3">FOREST LOVERS CLUB</a>
                         </Link>
                       </li>
-                      
+                      {/* <li onClick={() => setConnectViewDropDown(false)}>
+                        <Link href="/connect/successStory">
+                          <a className=" nav-link mx-3">SUCCESS STORIES</a>
+                        </Link>
+                      </li> */}
                     </ul>
                   )}
-                </div> */}
+                </div>
               </Nav>
-              {/* <Nav>
+              <Nav>
                 <div className="pt-1 d-flex align-items-center">
                   {session ? (
                     <>
@@ -213,6 +201,7 @@ function Header({ customData }) {
                           className="btn border-0"
                           onClick={() => setViewDropDown(!viewDropDown)}
                         >
+                          {/* <MdAccountCircle style={{fontSize:24}} className="cursor-pointer" /> */}
                           {session?.user?.name?.split(" ")[0] || "Profile"}
                         </button>
                         {viewDropDown && (
@@ -257,8 +246,11 @@ function Header({ customData }) {
                   ) : (
                     <>
                       <Link href="/auth/Login">
+                        <a className="nav-Login text-black login me-3">Login</a>
+                      </Link>
+                      <Link href="/auth/Register">
                         <a className="nav-Login btn btn-success btn-sm ms-2 py-2 px-3 signup-btn">
-                          LOGIN
+                          Signup
                         </a>
                       </Link>
                     </>
@@ -285,7 +277,7 @@ function Header({ customData }) {
                     </a>
                   </Link>
                 </div>
-              </Nav> */}
+              </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
@@ -297,8 +289,8 @@ function Header({ customData }) {
             <Navbar.Brand href="/" className="Logo_brand">
               <Image
                 className="Logo_icon"
-                width={120}
-                height={50}
+                width={70}
+                height={40}
                 src={logo}
                 alt="logo"
                 unoptimized={true}
@@ -326,29 +318,88 @@ function Header({ customData }) {
                 />
               </Offcanvas.Header>
               <Offcanvas.Body>
-                <Nav className="mx-auto mb-2 mb-lg-0 ">
+                <Nav
+                  className={`mx-auto mb-2 mb-lg-0 ${!expand ? "d-none" : ""}`}
+                >
                   {menus.map((menu) => (
                     <Link href={menu.href} key={menu.id}>
-                      <a className="nav-link mx-3" onClick={handleClose}>
+                      <a
+                        className="nav-link mx-3  mx-auto"
+                        onClick={handleClose}
+                      >
                         {menu.title}
                       </a>
                     </Link>
                   ))}
-                  {/* {session ? (
+                  <div
+                    className="position-relative mx-3 mx-auto"
+                    ref={connectmenuRef}
+                  >
+                    <button
+                      className="bg-transparent border-0 nav-link"
+                      onClick={() =>
+                        setConnectViewDropDown(!connectViewDropDown)
+                      }
+                    >
+                      CONNECT
+                    </button>
+                    {connectViewDropDown && (
+                      <ul
+                        className="dropdown-menu show position-absolute shadow rounded"
+                        style={{
+                          width: "16.5em",
+                          zIndex: 100,
+                        }}
+                      >
+                        <li onClick={() => setConnectViewDropDown(false)}>
+                          <Link href="/connect/consumerProgram">
+                            <a className="dropdown-item text-black">
+                              CONSUMER CONNECT PROGRAM
+                            </a>
+                          </Link>
+                        </li>
+                        <li onClick={() => setConnectViewDropDown(false)}>
+                          <Link href="/connect/forestLover">
+                            <a className="dropdown-item text-black">
+                              FOREST LOVERS CLUB
+                            </a>
+                          </Link>
+                        </li>
+                        {/*
+
+                          <li onClick={() => setConnectViewDropDown(false)}>
+                          <Link href="/connect/successStory">
+                          <a className="dropdown-item text-black">
+                          SUCCESS STORIES
+                          </a>
+                          </Link>
+                          </li>
+                        */}
+                      </ul>
+                    )}
+                  </div>
+                  {/* eslint-disable-next-line  */}
+                  {session ? (
                     <>
                       <Link href="/auth/UserProfile">
-                        <a className="nav-link mx-3" onClick={handleClose}>
+                        <a
+                          className="nav-link mx-3 mx-auto"
+                          onClick={handleClose}
+                        >
                           YOUR PROFILE
                         </a>
                       </Link>
                       <Link href="/shopping/Shopping">
-                        <a className="nav-link mx-3" onClick={handleClose}>
+                        <a
+                          className="nav-link mx-3 mx-auto"
+                          onClick={handleClose}
+                        >
                           MY CART
                         </a>
                       </Link>
                       <Link href="/auth/Login">
                         <a
-                          className="nav-link mx-3"
+                          className="nav-link mx-3 mx-auto"
                           onClick={() => {
                             signOut({
                               redirect: false,
@@ -366,11 +417,24 @@ function Header({ customData }) {
                     </>
                   ) : (
                     <Link href="/auth/Login">
-                      <a className="nav-link mx-3" onClick={handleClose}>
+                      <a
+                        className="nav-link mx-3 mx-auto"
+                        onClick={handleClose}
+                      >
                         LOGIN
                       </a>
                     </Link>
-                  )} */}
+                  )}
+                  {session ? null : (
+                    <Link href="/auth/Register">
+                      <a
+                        className="nav-link mx-3 mx-auto"
+                        onClick={handleClose}
+                      >
+                        Sign Up
+                      </a>
+                    </Link>
+                  )}
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
@@ -383,7 +447,7 @@ function Header({ customData }) {
                 <BsSearch style={{ width: 30, fontSize: "22px" }} />
               </span>
 
-              <Link href="/" onClick={iconHandler}>
+              <Link href="/shopping/Shopping" onClick={iconHandler}>
                 <a className="mobile-cart-icon">
                   <BsFillCartFill
                     style={{ width: 30, fontSize: "22px" }}
@@ -461,7 +525,7 @@ function Header({ customData }) {
       </div>
       <style jsx>{`
         .signup-btn {
-          background-color: #000 !important;
+          background-color: #065934 !important;
           font-family: "Lora";
           padding: 0.3rem 1rem !important;
           border-radius: 0 !important;
@@ -484,7 +548,7 @@ function Header({ customData }) {
           text-align: center;
           top: -15px;
           left: 30px;
-          background: #000 !important;
+          background: #065934 !important;
           color: white;
         }
 

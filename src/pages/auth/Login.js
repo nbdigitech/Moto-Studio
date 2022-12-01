@@ -217,7 +217,7 @@ export default function Login() {
                         </Link>
                       </div>
 
-                      <div
+                      {/* <div
                         className="divider position-relative mt-5"
                         style={{ height: 20 }}
                       >
@@ -237,7 +237,7 @@ export default function Login() {
                         >
                           OR
                         </span>
-                      </div>
+                      </div> */}
 
                       {/* {providers && (
                         <div className="social-login-btn d-flex justify-content-center">
@@ -284,8 +284,13 @@ export default function Login() {
                         </div>
                       )} */}
 
-                      <div className="forgot-div text-center fw-bold mt-5">
-                        <span>
+                      <div className="forgot-div text-center fw-bold">
+                        <span
+                          style={{
+                            fontSize: 14,
+                            fontWeight: 400,
+                          }}
+                        >
                           Don’t have an Account? &nbsp;
                           <Link href="/auth/Register">
                             <a

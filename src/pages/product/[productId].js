@@ -1,12 +1,9 @@
-import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
-import image1 from "../../assets/images/product/placeholder.png";
+import { Col, Row } from "react-bootstrap";
 import ButtonDark from "../../components/button/ButtonDark";
 // import Popup from "./PopUp";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { AiFillPlusCircle } from "react-icons/ai";
 import { MdLocalShipping } from "react-icons/md";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -193,7 +190,29 @@ function ProductDetail({ productData }) {
                       +
                     </span>
                   </div>
+
+                  {/* <div className="input-group width-of-select-input-unit mt-4">
+                    <input
+                      type="text"
+                      className="form-control bg-white rounded-0 fs-10"
+                      placeholder="Select Colour"
+                      readOnly
+                    />
+                    <select
+                      name="Colour"
+                      id=""
+                      style={{
+                        width: "50%",
+                        textAlign: "center",
+                      }}
+                    >
+                      <option value="red">Red</option>
+                      <option value="blue">Blue</option>
+                      <option value="green">Green</option>
+                    </select>
+                  </div> */}
                 </div>
+
                 <br />
                 <div className="product-Price-1 w-100">
                   <span className="fs-2">₹ </span>
@@ -288,7 +307,7 @@ function ProductDetail({ productData }) {
         </div>
       </div>
 
-      <Container>
+      {/* <Container>
         <div className="mb-5">
           <p className="productName-extra-product">You may also like</p>
           <Row className="justify-content-center">
@@ -321,9 +340,7 @@ function ProductDetail({ productData }) {
                       <h1 className="product-card-text mt-2">
                         {product?.title || "title"}
                       </h1>
-                      {/* <p className="product-card-para w-100">
-                        {product?.sub_title}
-                      </p> */}
+                      
                       <p className="product-card-para w-100">
                         {product?.description || "Description"}
                       </p>
@@ -331,7 +348,6 @@ function ProductDetail({ productData }) {
                         className="mt-2 mb-2 product-card-text1 d-flex cursor-pointer"
                         onClick={(e) => {
                           e.stopPropagation();
-                          // setShowPopUp(true);
                         }}
                       >
                         <div>
@@ -340,9 +356,7 @@ function ProductDetail({ productData }) {
                           </span>
                         </div>
                         <div>
-                          {/* {showPopuUp && (
-                            <Popup data={product} setShowPopUp={setShowPopUp} />
-                          )} */}
+                         
                           <span className="product-card-details ms-lg-2">
                             Product Details
                           </span>
@@ -359,11 +373,7 @@ function ProductDetail({ productData }) {
                                 : product?.weight[0]?.discount_value
                             )}
                         </span>
-                        {/* {product?.weight[0].discount_value && (
-                          <span className="fs-6 text-muted ms-2 text-decoration-line-through">
-                            ₹ {product?.weight[0]?.price}
-                          </span>
-                        )} */}
+                       
                       </span>
 
                       {product?.weight[0]?.count > 0 ? (
@@ -405,38 +415,14 @@ function ProductDetail({ productData }) {
                           </span>
                         </div>
                       )}
-                      {/* <div className="mt-3">
-                          <button className="btn amazon-btn border w-100 rounded-0 d-flex align-items-center justify-content-center gap-2">
-                              <span>Buy it on</span>
-                              <Image 
-                                src={'/images/amz.png'} 
-                                alt="amz" width={59} height={20} unoptimized={true} 
-                                loading="eager"
-                                style={{marginTop: 20}}
-                                />
-                            </button>
-                            <style>{`
-                            .amazon-btn{
-                              background: transparent;
-                              color:#333333;
-                              padding: 0.7rem 0;
-                              font-family:'Lato';
-                              outline:0;
-                              box-shadow: none;
-                            }
-
-                            .amazon-btn:hover{ 
-                              background: #eee;
-                            }
-                            `}</style>
-                        </div> */}
+                      
                     </div>
                   </Col>
                 );
               })}
           </Row>
         </div>
-      </Container>
+      </Container> */}
     </>
   );
 }

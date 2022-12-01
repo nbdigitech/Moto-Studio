@@ -73,7 +73,6 @@ function FeaturedProducts({ category }) {
         <div className="image-div1">
           <Slider {...settings}>
             {links.map((cat, index) => {
-              console.log("cat :>> ", index);
               return (
                 <Link href={`${cat?.name}`} key={index}>
                   <div

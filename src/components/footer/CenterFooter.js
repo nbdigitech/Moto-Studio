@@ -70,7 +70,6 @@ function CenterFooter() {
                       </h6>
                       <div className="d-flex flex-column">
                         {links.map((cat, index) => {
-                          console.log("cat :>> ", index);
                           return (
                             <Link href={`${cat?.name}`} key={index}>
                               <p

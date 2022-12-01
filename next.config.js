@@ -11,19 +11,16 @@ module.exports = {
     SECRET: "ksjkddskfhsjkdvhskjvbcxnvkjsadajdsbcnb",
     FACEBOOK_CLIENT_ID: "335557988510070",
     FACEBOOK_CLIENT_SECRET: "be4a34a7467ff38344fb08d31abb24d1",
-    NEXTAUTH_URL: "https://www.chhattisgarhherbal.com",
+    // NEXTAUTH_URL: "https://www.chhattisgarhherbal.com",
     MONGO_URI:
-      "mongodb+srv://moto-studio:moto-studio@cluster0.vpjz4ly.mongodb.net/test",
-    // NEXTAUTH_URL:'http://localhost:3000'
+      "mongodb+srv://moto-studio:moto-studio@cluster0.vpjz4ly.mongodb.net/motostudio",
   },
-  // distDir: '.next',
-  // swcMinify: false,
-  // "presets": ["next/babel"],
+
   images: {
     domains: [
       "res.cloudinary.com",
-      "cg-herbal.s3.amazonaws.com",
-      "cg-herbal.s3.ap-south-1.amazonaws.com",
+      "cgherbal.s3.amazonaws.com",
+      "cgherbal.s3.ap-south-1.amazonaws.com",
       "prakash-art.s3.amazonaws.com",
       "prakash-art.s3.ap-south-1.amazonaws.com",
       "res.cloudinary.com",
