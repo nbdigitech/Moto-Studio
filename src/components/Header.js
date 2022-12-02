@@ -189,7 +189,7 @@ function Header() {
                   )}
                 </div>
               </Nav>
-              <Nav>
+              {/* <Nav>
                 <div className="pt-1 d-flex align-items-center">
                   {session ? (
                     <>
@@ -201,7 +201,6 @@ function Header() {
                           className="btn border-0"
                           onClick={() => setViewDropDown(!viewDropDown)}
                         >
-                          {/* <MdAccountCircle style={{fontSize:24}} className="cursor-pointer" /> */}
                           {session?.user?.name?.split(" ")[0] || "Profile"}
                         </button>
                         {viewDropDown && (
@@ -277,7 +276,7 @@ function Header() {
                     </a>
                   </Link>
                 </div>
-              </Nav>
+              </Nav> */}
             </Navbar.Collapse>
           </Container>
         </Navbar>

@@ -235,45 +235,14 @@ function ProductDetail({ productData }) {
                 </div>
                 <div className="mt-0">
                   <Row>
-                    {selectedWeight?.count > 0 ? (
-                      item.some((el) => el.product === productData?._id) ||
-                      item.some(
-                        (el) =>
-                          el.product?._id === productData?._id &&
-                          el.weight_type === selectedWeight?.weight_type?._id
-                      ) ? (
-                        <Col xs={6}>
-                          <div
-                            className="mt-2"
-                            onClick={() => router.push(`/shopping/Shopping`)}
-                          >
-                            <ButtonDark text="VIEW CART" className="active" />
-                          </div>
-                        </Col>
-                      ) : (
-                        <Col
-                          lg={6}
-                          onClick={(e) => {
-                            addProductToCart(
-                              productData,
-                              selectedWeight,
-                              count
-                            );
-                          }}
-                        >
-                          <ButtonDark text="ADD TO CART" />
-                        </Col>
-                      )
-                    ) : (
-                      <Col
-                        lg={6}
-                        onClick={(e) => {
-                          addProductToCart(productData, selectedWeight, count);
-                        }}
-                      >
-                        <ButtonDark text="OUT OF STOCK" disabled />
-                      </Col>
-                    )}
+                    <Col
+                      lg={6}
+                      onClick={(e) => {
+                        router.push("/thankyou");
+                      }}
+                    >
+                      <ButtonDark bgColor="#000" text="Connect To Whatsapp" />
+                    </Col>
                   </Row>
                 </div>
 

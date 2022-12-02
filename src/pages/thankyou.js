@@ -35,14 +35,20 @@ const Thankyou = () => {
             </p>
             <div className="flex justify-center">
               <Link href="/">
-                <button
-                  style={{
-                    padding: "10px 30px",
-                  }}
-                  className="w-32 text-center mx-2 flex justify-center text-white bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                <a
+                  href="https://api.whatsapp.com/send?phone=917000028760"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Home
-                </button>
+                  <button
+                    style={{
+                      padding: "10px 30px",
+                    }}
+                    className="w-32 text-center mx-2 flex justify-center text-white bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                  >
+                    Whatsapp Connect
+                  </button>
+                </a>
               </Link>
             </div>
           </div>

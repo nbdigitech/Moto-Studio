@@ -7,7 +7,6 @@ import Modal from "react-bootstrap/Modal";
 import { AiFillPlusCircle } from "react-icons/ai";
 import ProductImageOne from "../../assets/images/product/placeholder.png";
 import filterlogo from "../../assets/img/filter.png";
-import ButtonDark from "../../components/button/ButtonDark";
 import ButtonLight from "../../components/button/ButtonLight";
 import { CardContext } from "../../components/Layout";
 import Skeleton from "../../components/Skeleton";
@@ -584,7 +583,7 @@ function Products() {
                               </span>
                             )}
                           </span>
-                          {product?.weight[0]?.count > 0 ? (
+                          {/* {product?.weight[0]?.count > 0 ? (
                             item.some((el) => el.product === product?._id) ||
                             item.some(
                               (el) => el.product?._id === product?._id
@@ -634,7 +633,7 @@ function Products() {
                                 />
                               </span>
                             </div>
-                          )}
+                          )} */}
 
                           {/* <div className="mt-3">
                               <button className="btn amazon-btn border w-100 rounded-0 d-flex align-items-center justify-content-center gap-2">
