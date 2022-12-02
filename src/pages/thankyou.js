@@ -15,7 +15,7 @@ const Thankyou = () => {
           <AiOutlineHeart
             className="text-9xl text-primary"
             style={{
-              color: "#f00",
+              color: "#000",
               fontSize: "120px",
               display: "flex",
               justifyContent: "center",
@@ -41,10 +41,11 @@ const Thankyou = () => {
                   rel="noopener noreferrer"
                 >
                   <button
+                    className="w-32 text-center mx-2 flex justify-center text-white  border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
                     style={{
                       padding: "10px 30px",
+                      backgroundColor: "#000",
                     }}
-                    className="w-32 text-center mx-2 flex justify-center text-white bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
                   >
                     Whatsapp Connect
                   </button>
