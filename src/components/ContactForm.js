@@ -121,6 +121,7 @@ function ContactForm() {
     var templatePrams = {
       mailFrom: result.contactForm.email,
       userName: result.contactForm.first_name,
+      mobile: result.contactForm.last_name,
       content: result.contactForm.message,
       subject: result.contactForm.subject,
     };
@@ -241,24 +242,6 @@ function ContactForm() {
           </Container>
           <Container className="demo1" style={{}}>
             <div>
-              {/* <div className="my-4">
-                <p className="about-empowered-heading">How can we help?</p>
-                <hr className="about-empowered-top-hr mx-auto mt-3"></hr>
-              </div> */}
-
-              {/* <div className="text-center">
-                <Select
-                  labelId="demo-simple-select-helper-label"
-                  value={index}
-                  label="number"
-                  onChange={handleChangeNum}
-                  className="py-0 text-start px-3 contact-text-family select_box select-button-width"
-                >
-                  <MenuItem value={0}>Select an Option</MenuItem>
-                  <MenuItem value={1}>Support & Feedback</MenuItem>
-                  <MenuItem value={2}>Grievances</MenuItem>
-                </Select>
-              </div> */}
               {index === 1 ? (
                 <h1 className="Contact-Us-heading mt-5 fs-2 ">
                   Support & Feedback
@@ -294,11 +277,11 @@ function ContactForm() {
                   </Col>
                   <Col md={12} lg={6}>
                     <Form.Label className=" fw-bold pt-3 ">
-                      Last name
+                      Mobile Number
                     </Form.Label>
                     <Form.Control
                       className=" Contact-Us-form-input  "
-                      placeholder="Enter your last name here"
+                      placeholder="Enter your Mobile Number here"
                       name="last_name"
                       value={last_name}
                       onChange={changeHandler}
@@ -365,10 +348,10 @@ function ContactForm() {
                     />
                   </Col>
                   <Col md={12} lg={6}>
-                    <Form.Label className=" fw-bold ">Last name</Form.Label>
+                    <Form.Label className=" fw-bold ">Mobile Number</Form.Label>
                     <Form.Control
                       className=" Contact-Us-form-input  "
-                      placeholder="Enter your last name here"
+                      placeholder="Enter your Mobile Number here"
                       name="last_name_grievance"
                       value={last_name_grievance}
                       onChange={changeHandlerGrievance}
